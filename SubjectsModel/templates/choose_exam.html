@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Welcome to Ray's exam system </title>
+</head>
+<body>
+<form action="/exampaper/" method="post">
+    {% csrf_token %}
+Select your exam paper:    <select name="ExamPapers">
+    {% for paper in exam_list %}
+         <option value="{{ paper }}">{{ paper }}</option>
+    {% endfor %}
+
+</select>
+<input type="submit" value="Goto Exam">
+</form>
+</body>
+</html>

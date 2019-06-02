@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{ exam_name }} </title>
+</head>
+<body>
+<h1>{{ exam_name }}</h1>
+<form action="/exam_marking/" method="post">
+    {% csrf_token %}
+    {% for s in subjects %}
+        <i>{{forloop.counter}}</i><code>.    {{ s.content_txt }}</code><br>
+        {% if s.options1 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="1" checked>&nbsp;&nbsp;{{s.options1}}<br>
+        {% endif %}
+
+        {% if s.options2 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="2">&nbsp;&nbsp;{{s.options2}}<br>
+        {% endif %}
+
+        {% if s.options3 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="3">&nbsp;&nbsp;{{s.options3}}<br>
+        {% endif %}
+
+        {% if s.options4 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="4">&nbsp;&nbsp;{{s.options4}}<br>
+        {% endif %}
+
+        {% if s.options5 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="5">&nbsp;&nbsp;{{s.options5}}<br>
+        {% endif %}
+
+        {% if s.options6 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="6">&nbsp;&nbsp;{{s.options6}}<br>
+        {% endif %}
+
+        {% if s.options7 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="7">&nbsp;&nbsp;{{s.options7}}<br>
+        {% endif %}
+
+        {% if s.options8 %}
+            <input type="radio" name="ans{{forloop.counter}}" value="8">&nbsp;&nbsp;{{s.options1}}<br>
+        {% endif %}
+        <br>
+    {% endfor %}
+    <br><input type="submit" value="submit">
+</form>
+</body>
+</html>
