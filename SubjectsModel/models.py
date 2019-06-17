@@ -29,7 +29,7 @@ class Subject(models.Model):
         return "ID: " + str(self.id)
 
 class Exam(models.Model):
-    name = models.CharField(max_length=128, default='default')
+    name = models.CharField(max_length=128, unique=True)
     subjects_set = models.ManyToManyField("Subject")
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)

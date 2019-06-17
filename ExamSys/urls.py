@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^exam/', SubjectsModel_views.choose_exam),
     url(r'^exampaper/', SubjectsModel_views.make_exam),
     url(r'^exam_marking/', SubjectsModel_views.mark_exam),
+    url(r'^recommend/', SubjectsModel_views.show_recommend),
     url(r'^admin/', admin.site.urls),
 ]
