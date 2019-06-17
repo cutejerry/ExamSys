@@ -9,7 +9,7 @@ class Subject(models.Model):
     type = models.CharField(choices=(("1", "ADD"),("2", "SUB"),("3", "MUL"),("4", "DIV"),("0", "others")), max_length = 1, default = "0")
     content_txt = models.TextField(null = True, blank = False)
     answer_idx = models.PositiveSmallIntegerField()
-    options1 = models.CharField(max_length=512, default="")
+    options1 = models.CharField(max_length=512, null = True, blank = True, default="")
     options2 = models.CharField(max_length=512, null = True, blank = True)
     options3 = models.CharField(max_length=512, null = True, blank = True)
     options4 = models.CharField(max_length=512, null = True, blank = True)

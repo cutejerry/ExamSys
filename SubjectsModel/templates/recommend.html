@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 <code> Recommend for you: id - {{sid}} </code><br><br>
 <form action="" method="post">
     {% csrf_token %}
@@ -37,13 +38,29 @@
         {% if s.options8 %}
             <input type="radio" name="ans0" value="8">&nbsp;&nbsp;<samp>{{s.options8}}</samp><br>
         {% endif %}
+
+        {% if s.content_img %}
+            <p> {{s.content_img}} </p>
+        {% endif %}
+
+        {% if s.content_video %}
+            <video width="320" height="180" controls>
+            <source src={{s.content_video}} type="video/mp4">
+            您的浏览器不支持Video标签。
+            </video>
+        {% endif %}
+
+        {% if s.options1 %}
+            <br><input type="submit" value="check">
+        {% endif %}
+
     {% else %}
         <code>{{ fs.modeldata.content_txt }}</code><br>
 
         {% if fs.modeldata.options1 %}
             {% if fs.user_ans == 1 %}
                 <input type="radio" name="ans0" value="1" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options1}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="1" >&nbsp;&nbsp;<samp>{{fs.modeldata.options1}}</samp><br>
@@ -53,7 +70,7 @@
         {% if fs.modeldata.options2 %}
             {% if fs.user_ans == 2 %}
                 <input type="radio" name="ans0" value="2" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options2}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="2" >&nbsp;&nbsp;<samp>{{fs.modeldata.options2}}</samp><br>
@@ -63,7 +80,7 @@
         {% if fs.modeldata.options3 %}
             {% if fs.user_ans == 3 %}
                 <input type="radio" name="ans0" value="3" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options3}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="3" >&nbsp;&nbsp;<samp>{{fs.modeldata.options3}}</samp><br>
@@ -73,7 +90,7 @@
         {% if fs.modeldata.options4 %}
             {% if fs.user_ans == 4 %}
                 <input type="radio" name="ans0" value="4" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options4}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="4" >&nbsp;&nbsp;<samp>{{fs.modeldata.options4}}</samp><br>
@@ -83,7 +100,7 @@
         {% if fs.modeldata.options5 %}
             {% if fs.user_ans == 5 %}
                 <input type="radio" name="ans0" value="5" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options5}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="5" >&nbsp;&nbsp;<samp>{{fs.modeldata.options5}}</samp><br>
@@ -93,7 +110,7 @@
         {% if fs.modeldata.options6 %}
             {% if fs.user_ans == 6 %}
                 <input type="radio" name="ans0" value="6" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options6}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="6" >&nbsp;&nbsp;<samp>{{fs.modeldata.options6}}</samp><br>
@@ -103,7 +120,7 @@
         {% if fs.modeldata.options7 %}
             {% if fs.user_ans == 7%}
                 <input type="radio" name="ans0" value="7" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options7}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="7" >&nbsp;&nbsp;<samp>{{fs.modeldata.options7}}</samp><br>
@@ -113,17 +130,17 @@
         {% if fs.modeldata.options8 %}
             {% if fs.user_ans == 8 %}
                 <input type="radio" name="ans0" value="8" checked >&nbsp;&nbsp;<samp>{{fs.modeldata.options8}}</samp>
-                {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                 <br>
             {% else %}
                 <input type="radio" name="ans0" value="8" >&nbsp;&nbsp;<samp>{{fs.modeldata.options8}}</samp><br>
             {% endif %}
         {% endif %}
 
-        {% if fs.is_correct == 0 %}
-            <code> Correct ans is <b><font color="#FF0000">No.{{fs.modeldata.answer_idx}}</font></b> </code>
-        {% endif %}
+        <!--{% if fs.is_correct == 0 %}-->
+            <!--<code> Correct ans is: <b><font color="#00CC00">{{fs.correct_ans}}</font></b> </code>-->
+        <!--{% endif %}-->
+        <br><input type="submit" value="check">
     {% endif %}
-    <br><input type="submit" value="check">
 </form>
 </html>

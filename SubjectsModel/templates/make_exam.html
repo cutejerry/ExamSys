@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
     <title> {{ exam_name }} </title>
 </head>
 <body>
@@ -12,35 +13,35 @@
         {% for s in subjects %}
             <i>{{forloop.counter}}</i><code>.    {{ s.content_txt }}</code><br>
             {% if s.options1 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="1" checked>&nbsp;&nbsp;<samp>A. {{s.options1}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="1" checked>&nbsp;&nbsp;<samp>{{ans_idx_map.1}}. {{s.options1}}</samp><br>
             {% endif %}
 
             {% if s.options2 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="2">&nbsp;&nbsp;<samp>B. {{s.options2}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="2">&nbsp;&nbsp;<samp>{{ans_idx_map.2}}. {{s.options2}}</samp><br>
             {% endif %}
 
             {% if s.options3 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="3">&nbsp;&nbsp;<samp>C. {{s.options3}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="3">&nbsp;&nbsp;<samp>{{ans_idx_map.3}}. {{s.options3}}</samp><br>
             {% endif %}
 
             {% if s.options4 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="4">&nbsp;&nbsp;<samp>D. {{s.options4}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="4">&nbsp;&nbsp;<samp>{{ans_idx_map.4}}. {{s.options4}}</samp><br>
             {% endif %}
 
             {% if s.options5 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="5">&nbsp;&nbsp;<samp>E. {{s.options5}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="5">&nbsp;&nbsp;<samp>{{ans_idx_map.5}}. {{s.options5}}</samp><br>
             {% endif %}
 
             {% if s.options6 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="6">&nbsp;&nbsp;<samp>F. {{s.options6}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="6">&nbsp;&nbsp;<samp>{{ans_idx_map.6}}. {{s.options6}}</samp><br>
             {% endif %}
 
             {% if s.options7 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="7">&nbsp;&nbsp;<samp>G. {{s.options7}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="7">&nbsp;&nbsp;<samp>{{ans_idx_map.7}}. {{s.options7}}</samp><br>
             {% endif %}
 
             {% if s.options8 %}
-                <input type="radio" name="ans{{forloop.counter0}}" value="8">&nbsp;&nbsp;<samp>H. {{s.options8}}</samp><br>
+                <input type="radio" name="ans{{forloop.counter0}}" value="8">&nbsp;&nbsp;<samp>{{ans_idx_map.8}}. {{s.options8}}</samp><br>
             {% endif %}
             <br>
         {% endfor %}
@@ -50,87 +51,87 @@
 
             {% if fs.modeldata.options1 %}
                 {% if fs.user_ans == 1 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="1" checked >&nbsp;&nbsp;<samp>A. {{fs.modeldata.options1}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="1" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.1}}. {{fs.modeldata.options1}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="1" >&nbsp;&nbsp;<samp>A. {{fs.modeldata.options1}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="1" >&nbsp;&nbsp;<samp>{{ans_idx_map.1}}. {{fs.modeldata.options1}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options2 %}
                 {% if fs.user_ans == 2 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="2" checked >&nbsp;&nbsp;<samp>B. {{fs.modeldata.options2}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="2" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.2}}. {{fs.modeldata.options2}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="2" >&nbsp;&nbsp;<samp>B. {{fs.modeldata.options2}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="2" >&nbsp;&nbsp;<samp>{{ans_idx_map.2}}. {{fs.modeldata.options2}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options3 %}
                 {% if fs.user_ans == 3 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="3" checked >&nbsp;&nbsp;<samp>C. {{fs.modeldata.options3}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="3" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.3}}. {{fs.modeldata.options3}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="3" >&nbsp;&nbsp;<samp>C. {{fs.modeldata.options3}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="3" >&nbsp;&nbsp;<samp>{{ans_idx_map.3}}. {{fs.modeldata.options3}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options4 %}
                 {% if fs.user_ans == 4 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="4" checked >&nbsp;&nbsp;<samp>D. {{fs.modeldata.options4}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="4" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.4}}. {{fs.modeldata.options4}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="4" >&nbsp;&nbsp;<samp>D. {{fs.modeldata.options4}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="4" >&nbsp;&nbsp;<samp>{{ans_idx_map.4}}. {{fs.modeldata.options4}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options5 %}
                 {% if fs.user_ans == 5 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="5" checked >&nbsp;&nbsp;<samp>E. {{fs.modeldata.options5}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="5" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.5}}. {{fs.modeldata.options5}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="5" >&nbsp;&nbsp;<samp>E. {{fs.modeldata.options5}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="5" >&nbsp;&nbsp;<samp>{{ans_idx_map.5}}. {{fs.modeldata.options5}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options6 %}
                 {% if fs.user_ans == 6 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="6" checked >&nbsp;&nbsp;<samp>F. {{fs.modeldata.options6}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="6" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.6}}. {{fs.modeldata.options6}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="6" >&nbsp;&nbsp;<samp>F. {{fs.modeldata.options6}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="6" >&nbsp;&nbsp;<samp>{{ans_idx_map.6}}. {{fs.modeldata.options6}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options7 %}
                 {% if fs.user_ans == 7%}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="7" checked >&nbsp;&nbsp;<samp>G. {{fs.modeldata.options7}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="7" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.7}}. {{fs.modeldata.options7}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="7" >&nbsp;&nbsp;<samp>G. {{fs.modeldata.options7}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="7" >&nbsp;&nbsp;<samp>{{ans_idx_map.7}}. {{fs.modeldata.options7}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.modeldata.options8 %}
                 {% if fs.user_ans == 8 %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="8" checked >&nbsp;&nbsp;<samp>H. {{fs.modeldata.options8}}</samp>
-                    {% if fs.is_correct %}&nbsp;&nbsp;correct{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
+                    <input type="radio" name="ans{{forloop.counter0}}" value="8" checked >&nbsp;&nbsp;<samp>{{ans_idx_map.8}}. {{fs.modeldata.options8}}</samp>
+                    {% if fs.is_correct %}&nbsp;&nbsp;<b><font color="#00CC00">correct</font></b>{% else %}&nbsp;&nbsp;<b><font color="#FF0000">wrong</font></b>{% endif %}
                     <br>
                 {% else %}
-                    <input type="radio" name="ans{{forloop.counter0}}" value="8" >&nbsp;&nbsp;<samp>H. {{fs.modeldata.options8}}</samp><br>
+                    <input type="radio" name="ans{{forloop.counter0}}" value="8" >&nbsp;&nbsp;<samp>{{ans_idx_map.8}}. {{fs.modeldata.options8}}</samp><br>
                 {% endif %}
             {% endif %}
 
             {% if fs.is_correct == 0 %}
-                <code> Correct ans is <b><font color="#FF0000">No.{{fs.modeldata.answer_idx}}</font></b> </code><br>
-                <iframe src="../recommend?sid={{fs.rec_sid}}" width="400" height="240"></iframe><br>
+                <code> Correct ans is: <b><font color="#00CC00"> {{fs.correct_ans}}</font></b> </code><br>
+                <iframe src="../recommend?sid={{fs.rec_sid}}" width="480" height="240"></iframe><br>
                 <br>
             {% else %}
                 <br>
