@@ -79,12 +79,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'raydb', # 数据库名字(需要先创建)
-        # 'USER': 'ray', # 登录用户名
-        # 'PASSWORD': '850113ray', # 密码
-        # 'HOST': '', # 数据库IP地址,留空默认为localhost
-        # 'PORT': '5432', # 端口
     }
 }
 
